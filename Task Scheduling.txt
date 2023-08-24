@@ -1,0 +1,79 @@
+Steps to start httpd service and verify if that's running or not in Web browser.
+
+1)	sudo yum install httpd.
+ 
+2)	service httpd start.
+
+3)	service httpd status.
+
+4)	Launch Web browser and type "localhost" in URL.
+
+
+To display desired text in web browser you can follow below steps:
+
+1)	cd /
+
+2)	cd var
+
+3)	cd www
+
+4)	cd html
+
+5)	sudo nano index.html (Write desired content you want to see in web browser)
+
+6)	Launch Web browser and type "localhost" in URL.
+
+
+FYI: By default all web browsers will look for index.html file to fetch the contents in that file.
+
+
+If you want to fetch contents from a file other than index.html you can follow below steps:
+
+1) sudo nano display.html  (create this file inside html directory present in root)
+
+2) Launch web browser and type "localhost/display.html" in URL.
+
+
+Module 7 - Assignment
+
+Problem Statement:
+
+ Create a cron job that will run once a month, on the second data of the month
+ Create a cron job that will run thrice in an hour and this should repeat every hour
+
+
+Solution:
+
+1)nano file1.txt
+		CRON DEMO
+
+		SUCCESSFULLY COMPLETED
+
+
+2)touch	file2.txt
+
+3)nano cronjob1.sh
+		#!/bin/bash
+		cat home/cloudops/file1.txt > home/cloudops/file2.txt
+		
+4)chmod +x cronjob1.sh | chmod +x file1.txt
+
+5)crontab -e
+
+6)0 0 2 * * /home/cloudops/cronjob1.sh         //Create a cron job that will run once a month, on the second data of the month.
+
+7)20 * * * * /home/cloudops/cronjob1		   //Create a cron job that will run thrice in an hour and this should repeat every hour.
+
+
+		
+
+
+
+
+
+
+
+
+
+
+

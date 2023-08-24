@@ -1,0 +1,40 @@
+Module 10 - Assignment
+
+Problem Statement:
+You work for xyz organization. Your job work is to manage Linux-based servers.
+
+You have been asked to:
+
+1. Add a website with its IP address in the /etc/hosts file
+2. Ping it to check whether it is working fine
+3. Connect to that server using ftp and transfer a file from your pc to that server
+4. Install a web server and allow access to the port number of that server
+
+
+Solution:
+
+1) ping -c 2 www.google.com - To get it's IP address. 
+
+2) sudo gedit /etc/hosts
+
+3) Add the IP address copied in step 1 with desired domain name (113.44.565.67 google) and save the file.
+
+4) ping -c 2 google - To check if it's working fine.
+
+5) sudo yum install ftp
+
+6) ftp ftp.cesca.es  (Username-> anonymous and Password-> )
+
+7) get filename.txt (To copy file to local linux machine from connected server)
+
+8) scp filename.txt ftp.cesca.es (To copy file from local machine to connected server)
+
+9) sudo systemcl start nginx
+
+10) sudo systemctl status nginx
+
+11) sudo firewall-cmd --permanent --zone=public --add-service=http --add-service=https
+
+12) sudo firewall-cmd --reload
+
+13) sudo firewall-cmd --list-services --zone=public

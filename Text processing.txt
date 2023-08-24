@@ -1,0 +1,33 @@
+Module 6 - Assignment
+
+Problem Statement:
+
+In your primary system you have a folder consist that consists of the dataset that we needto perform task on. Mount the folder to the Linux operating system. The dataset is stored
+in zipped file. Extract the file using 'zip' command. You can find the dataset in the attachment. Once done mounting perform the tasks given below:
+
+a) Write an awk program to print out only the Name of the game and Year of release
+b) Write an awk program to print only the Name column from the row 200 to row 210
+c) Write an awk program to print all the games released on the year 2005 between the rows 100 to 500
+
+Solution:
+
+1)	Created folder named "shared" in PC which consists of zipfile "linux_mod6_dataset".
+
+2)	Add the above folder to Shared folders under Settings in Virtualbox and start linux os.
+
+3) Run the below commands:
+	mkdir ~/shared
+	
+4)	$ sudo mount -t vboxsf shared ~/shared
+
+5)	$ cd ~/share
+
+6)	$ sudo yum install unzip 
+
+7)	$ unzip linux_mod6_dataset.zip
+
+8)	$ awk '{print $2,$4}' linux_mod6_dataset.csv
+
+9)	$ awk 'NR >=200 && NR <=210 {print $2}' linux_mod6_dataset.csv
+	
+10)	$ awk 'NR >=100 && NR <= 500 {print $2}' linux_mod6_dataset.csv | awk -F, '$4 == "2005"' linux_mod6_dataset.csv

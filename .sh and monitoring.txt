@@ -1,0 +1,27 @@
+Module 8 - Assignment
+
+Problem Statement:
+
+You work for xyz organization. Your job work is to manage Linux-based servers.
+You have been asked to:
+1. Launch Firefox 3 times, find their PID and use the kill command to close them
+2. Monitor incoming logs files to a folder using inotify and output them to a file
+
+Solution:
+
+1)After launching firefox 3 times enter the below command.
+
+2)	pgrep firefox
+	15069  (PID)
+
+3)	kill -9 15069
+
+4)All instances of firefox browser will be killed.
+
+5) Create a folder which you want to monitor.                                      6) Monitoring using inotify.                 
+   mkdir Monitor  					                                               	  inotifywait -m Monitor/ -o logs.txt                       
+   cd Monitor																			
+   nano one.txt "Hello"
+   rm one.txt	
+																					   cd ..
+																					   cat logs.txt

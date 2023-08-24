@@ -1,0 +1,51 @@
+Module 9 - Assignment
+
+Problem Statement:
+
+You work for xyz organization. Your job work is to manage Linux-based servers.
+You have been asked to:
+1. Install MySQL on CentOS
+2. Create a database with two tables – table1 & table2
+3. Create a shell script which can be used to insert 4 rows of data into table1 & table2
+
+
+Solution:
+
+1) sudo yum update
+
+2) sudo dnf install @mysql
+
+3) To create database and  add two tables execute below script(addtables.sh)
+   
+   #!/bin/bash
+	mysql -u root -p << EOF
+	create database newdatabase;
+	use newdatabase;
+	CREATE TABLE table1 (
+	 bookingid int NOT NULL AUTO_INCREMENT,
+	 date varchar(50) NOT NULL,
+	 name varchar(50),
+	 PRIMARY KEY (bookingid)
+	);
+	CREATE TABLE table2 (
+	 new_booking id int NOT NULL AUTO_INCREMENT,
+	 new_date varchar(50) NOT NULL,
+	 new_name varchar(50),
+	 PRIMARY KEY (bookingid)
+	);
+	EOF
+	
+6) Shell script which can be used to insert 4 rows of data into table1 & table2(insertinfo.sh)
+
+	#!/bin/bash
+	mysql -u root -p << EOF
+	use newdatabase;
+	insert into table1(date,name) values('2/2/2019', 'kodee');
+	insert into table1(date,name) values('2/3/2019', 'jake');
+	insert into table1(date,name) values('2/4/2019', 'holt');
+	insert into table1(date,name) values('2/5/2019', 'rosa');
+	insert into table2(new_date,new_name) values('2/7/2019', 'kodeeallen');
+	insert into table2((new_date,new_name) values('2/8/2019', 'jakema');
+	insert into table2((new_date,new_name) values('2/9/2019', 'holterin');
+	insert into table2((new_date,new_name) values('2/10/2019', 'rosalindsley');
+	EOF

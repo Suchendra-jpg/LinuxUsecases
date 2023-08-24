@@ -1,0 +1,14 @@
+Module 3 – Assignment
+
+Problem Statement:
+
+You are hosting a system network, where you have two processes running in background. First
+one is a process to monitor the uptime of each system and second one is a process that keeps
+track of all processes running in the working environment. The priority value of the first process
+is 8. The priority value of the second process is lower than the first process. Use 'renice' to
+change the priority. 
+
+Solution:
+
+sudo renice -10 PID(second_process)
+

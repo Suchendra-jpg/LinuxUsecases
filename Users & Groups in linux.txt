@@ -1,0 +1,88 @@
+1) Command to add a user with a comment :
+	sudo useradd -c "This is the third user" cloudops3
+
+2) To check the comment added by above command :
+	grep cloudops3 /etc/passwd
+
+3) To remove a group:
+	sudo groupdel groupname
+
+4) To check if the group is deleted:
+	grep groupname /etc/group
+	
+5) To create a new group:
+	sudo groupadd newgroup
+	
+6) To add a user into a group:
+	sudo gpasswd -a cloudops3 newgroup
+	
+7) To add multiple users in single command we use:
+	sudo gpasswd -M cloudops1,cloudops2 newgroup
+	
+8) To remove a user from a group we use:
+	sudo gpasswd -d cloudops3 newgroup
+	
+9) To add/remove permissions from group permissions we use:
+	chmod g+w(or)-x filename.txt
+	
+10) To add/remove permissions from other permissions we use:
+	chmod o+w(or)-x filename.txt
+	
+11) To get list of all the groups created we can use:
+	sudo cat /etc/group
+	
+12) To get info. of a specific group we can use:
+	sudo grep groupname /etc/group
+	
+13) To change ownership of user and/or group at same time we can use:
+	sudo chown username(or) : groupname (or) filename.txt
+
+14) To search for a pattern in a file we can use:
+	grep pattern filename.txt
+
+15) To change default group of an user already added we use:
+	sudo usermod -g groupname username
+	
+
+
+Module 2 – Assignment
+
+Problem Statement:
+
+You work for xyz organization. Your organization uses a UNIX/Linux based environment.
+You have been asked to:
+1. Create 3 users for the people in our server
+2. Create a group named “webdev” and add them in it
+3. Create a folder named “dev” with a file inside and give the file permission to be only opened by this group’s users
+4. Remove one user from the group and delete that user
+5. Move the file inside the folder to another folder and change the files group ownership
+
+Solution:
+
+sudo useradd developer
+sudo useradd tester
+sudo useradd pm
+To check if the users are created in the system:
+grep developer /etc/passwd
+grep tester /etc/passwd
+grep pm /etc/passwd
+To display userid and groupid of each users:
+id developer
+id tester
+id pm
+
+sudo groupadd webdev
+grep webdev /etc/group
+sudo gpasswd -M developer,tester,pm webdev
+grep webdev /etc/group
+
+mkdir dev
+nano newfile.txt
+chmod 040 newfile.txt
+chown :webdev newfile.txt
+
+sudo gpasswd -d pm webdev
+userdel -r pm
+
+mv dev/newfile.txt dev2
+chown :newgroup newfile.txt

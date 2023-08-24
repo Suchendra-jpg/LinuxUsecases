@@ -1,0 +1,74 @@
+
+The touch command is a standard command used in UNIX/Linux operating system which is used to create, change and modify timestamps of a file. 
+
+Basically, there are two different commands to create a file in the Linux system which is as follows:
+
+1)  cat command:   It is used to create the file with content.
+
+2)  touch command: It is used to create a file without any content. The file created using touch command is empty.
+                  This command can be used when the user doesn’t have data to store at the time of file creation.
+    EX: touch fileName.txt  - creates a file with given name.
+	
+3)  Nano is a user-friendly, simple and WYSIWYG(What You See Is What You Get) text editor.
+     It has an easy GUI(Graphical User Interface) which allows users to interact directly with the text in spite of switching between the modes as in vim editor.
+    EX: nano fileName.txt allows you to write desired content into selected file. 				  
+    Shortcuts: ctrl+O to save ; ctrl+x to exit;
+	
+4)  !ec + Enter ;  This will execute latest echo command used and will display the output.(! works as smart suggestion symbol to auto-complete commands)
+
+5)  env + Enter ;  This will show all the environment variables(Global variables) defined in the OS whereas set+ Enter ; This will show all local variables.
+
+
+Module 1 Assignment
+
+Problem Statement:
+You are assigned a task to install a web server, in order to control multiple worker processes
+from one master process. After you've done your research you found out that NGINX is the
+best suitable option in this scenario. Update the host system and install NGINX. Check the
+version installed.
+
+Solution:
+
+1)Nginx, pronounced like “engine-ex”, is an open-source web server that, since its initial success as a web server, is now also used as a reverse proxy, HTTP cache, and load balancer.
+2)Some high-profile companies using Nginx include Autodesk, Atlassian, Intuit, T-Mobile, GitLab, DuckDuckGo, Microsoft, IBM, Google, Adobe, Salesforce, VMWare, Xerox etc.
+3)Because its roots are in performance optimization under scale, Nginx often outperforms other popular web servers in benchmark tests, especially in situations with static content
+  and/or high concurrent requests.
+
+To know how Does Nginx Work?
+1) Nginx is built to offer low memory usage and high concurrency. Rather than creating new processes for each web request, Nginx uses an asynchronous, event-driven approach where 
+   requests are handled in a single thread.
+2) With Nginx, one master process can control multiple worker processes. The master maintains the worker processes, while the workers do the actual processing. 
+3) Because Nginx is asynchronous, each request can be executed by the worker concurrently without blocking other requests.
+
+Some common features seen in Nginx include:
+Reverse proxy with caching
+IPv6
+Load balancing
+FastCGI support with caching
+WebSockets
+Handling of static files, index files, and auto-indexing
+TLS/SSL with SNI 
+
+To install nginx on CentOS8 we need to follow the below steps:
+1)Before any installation, always update the local repository to ensure you are downloading the latest software. Use the command:
+	sudo yum update
+2)You can inspect the Nginx package before adding it to your system. Request to see the RPM metadata included in every RPM package:
+	sudo yum info nginx
+3)Next, install Nginx on CentOS 8 with the command:
+	sudo yum install nginx
+4)Although you have installed Nginx, the service will not start automatically.Start the service by typing:
+	sudo systemctl start nginx
+5)To enable the service to start running upon boot time use:
+	sudo systemctl enable nginx
+6)If you check the service status, the output should show you Nginx is active (running):
+	sudo systemctl status nginx
+7)Stop Nginx using the command:
+	sudo systemctl stop nginx
+8)Restart Nginx (stop and start the service again) with the command:
+	sudo systemctl restart nginx
+9)Reload the configuration files without stopping the service:
+	sudo systemctl reload nginx
+10) To check the version installed :
+	nginx -v (nginx version: nginx/1.14.1)
+	
+Reference Link:https://phoenixnap.com/kb/install-nginx-centos-8#:~:text=1%20Install%20Nginx%20on%20CentOS%208.%20Before%20any,for%20web%20traffic.%204%20Configure%20Nginx.%20You%20

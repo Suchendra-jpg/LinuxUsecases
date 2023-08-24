@@ -1,0 +1,23 @@
+
+Module 5 - Assignment
+
+Problem Statement:
+
+You work for xyz organization. Your organization uses a UNIX/Linux based server.
+You have been asked to:
+1. Create 2 shell script files – one.sh and two.sh
+2. In one.sh, create a code which involves looping statements, Conditional statements and 3 functions
+3. In two.sh, create a Case..esac statement in which first option runs the first function, 2nd option runs 2nd function and 3rd option runs the third function
+
+Solution:
+
+Created one.sh and two.sh and have attached the screenshots of both.
+
+chmod 740 one.sh
+chmod 740 two.sh
+
+./two.sh
+
+Have attached screenshot of output.
+
+

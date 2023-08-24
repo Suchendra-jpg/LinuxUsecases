@@ -1,0 +1,23 @@
+Module 4 - Assignment
+
+Problem Statement:
+
+Write a script to echo the following message before installing httpd in the system. The
+message is "You are using the system as" Change the file permission and test the script.
+
+Solution:
+
+nano displaymessage.sh
+
+#!/bin/bash
+echo "You are using the system as "
+
+save and exit
+
+chmod 764 displaymessage.sh
+
+./displaymessage.sh
+
+Output: You are using the system as
+
+ 
